@@ -1,6 +1,10 @@
 # Hierarchical Temporal Transformer for 3D Hand Pose Estimation and Action Recognition from Egocentric RGB Videos
 
 
+This is a fork of the official application for HTT in order to add more evaluation metric and more dataset.
+
+---
+
 Original implementation of the paper Yilin Wen, Hao Pan, Lei Yang, Jia Pan, Taku Komura and Wenping Wang, "Hierarchical Temporal Transformer for 3D Hand Pose Estimation and Action Recognition from Egocentric RGB Videos", CVPR, 2023. 
 [[Paper]](https://arxiv.org/pdf/2209.09484.pdf)[[Supplementary Video]](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/ylwen_connect_hku_hk/EqSS-_AKROVDsKSzb6FMuZYBrsrmAZ7yuwvVXX4pT6c3ug?e=yE8gFK)
 
