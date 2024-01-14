@@ -4,7 +4,7 @@ import numpy as np
  
 from joblib import Parallel, delayed
 from PIL import Image
-
+from datasets import fhbhands, h2ohands
 import lmdb
 #Resize original fpha imgs to (480,270)
 def resize_imgs_to_480_270_fpha(fhb_root="../fpha/"):
@@ -23,8 +23,8 @@ def resize_imgs_to_480_270_fpha(fhb_root="../fpha/"):
 
     subjects = [f"Subject_{subj_idx}" for subj_idx in range(1, 7)]
     # Gather all frame paths to convert
-    frame_pairs = []
     for subj in subjects:
+        frame_pairs = []
         subj_path = os.path.join(fhb_rgb_src, subj)
         actions = sorted(os.listdir(subj_path))
         for action in actions:
@@ -35,7 +35,7 @@ def resize_imgs_to_480_270_fpha(fhb_root="../fpha/"):
                 frames = sorted(os.listdir(seq_path))
                 for frame in frames:
                     frame_path_src = os.path.join(seq_path, frame)
-                    frame_path_dst = os.listdir(fhb_rgb_dst, subj, action, seq, "color", frame)
+                    frame_path_dst = os.path.join(fhb_rgb_dst, subj, action, seq, "color", frame)
                     frame_pairs.append((frame_path_src, frame_path_dst))
 
         # Resize all images
@@ -125,3 +125,7 @@ def convert_dataset_split_to_lmdb(dataset_name,dataset_folder,split):
 
     txn.commit()
     env.close()
+    
+    
+if __name__ == '__main__':
+    # resize_imgs_to_480_270_fpha(fhb_root='/media/mldadmin/home/s123mdg31_07/Datasets/FPHAB')
