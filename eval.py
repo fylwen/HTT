@@ -7,7 +7,7 @@ import torch
 from libyana.exputils.argutils import save_args
 from libyana.modelutils import freeze
 from libyana.randomutils import setseeds
-
+from torch.utils.tensorboard import SummaryWriter
 from datasets import collate
 from models.htt import TemporalNet
 from netscripts import epochpass

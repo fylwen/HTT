@@ -26,6 +26,6 @@ for p in path_files:
     plt.plot(data["x"],data["y"],linewidth=3)
     plt.tight_layout()
 
-
+    plt.savefig('pck_curve.png')
     plt.show()
     plt.close()
